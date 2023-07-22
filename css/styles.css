@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Poppins:wght@400;500;700&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #18334e;
+}
+
+picture, img {
+  display: block;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  background-color: hsl(210, 55%, 85%);
+  color: hsl(210, 24%, 15%);
+  overflow-x: hidden;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  margin-inline: auto;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.header {
+  transition: box-shadow 0.4s ease;
+}
+.header.active {
+  box-shadow: 0 17px 30px rgba(24, 51, 78, 0.14);
+}
+@media screen and (width >= 1024px) {
+  .header {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 3;
+    background-color: hsl(210, 55%, 85%);
+  }
+}
+.header__body {
+  height: 80px;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (width >= 1024px) {
+  .header__body {
+    grid-template-columns: max-content 1fr;
+    gap: 2rem;
+  }
+}
+.header__menu {
+  z-index: 21;
+}
+@media screen and (width >= 1024px) {
+  .header__menu {
+    display: none;
+  }
+}
+.header__menu i {
+  font-size: 2rem;
+}
+
+.main {
+  position: relative;
+  padding: 3rem 0;
+  height: calc(100svh - 80px);
+}
+@media screen and (width >= 1024px) {
+  .main {
+    height: max(800px, 100vh);
+    padding: calc(80px + 3rem) 0;
+  }
+}
+@media screen and (width >= 1440px) {
+  .main {
+    height: max(980px, 100vh);
+  }
+}
+.main__body {
+  position: relative;
+  max-width: 440px;
+}
+@media screen and (width >= 1024px) {
+  .main__body {
+    max-width: 500px;
+  }
+}
+.main__subtitle {
+  color: hsl(195, 100%, 30%);
+  font-weight: 600;
+  letter-spacing: 3px;
+  font-size: clamp(0.875rem, 4.8vw, 1rem);
+}
+.main__title {
+  font-family: "Lora", serif;
+  font-size: clamp(2.4rem, 4.5vw, 3.4rem);
+  color: #18334e;
+  line-height: 1.24;
+  margin: 0.5rem 0;
+}
+.main__btn {
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  background-image: linear-gradient(90deg, hsl(210, 55%, 20%), hsl(192, 62%, 25%));
+  color: white;
+  font-weight: 400;
+  box-shadow: 0 24px 38px rgba(24, 51, 78, 0.34);
+  transition: opacity 0.4s ease;
+}
+.main__btn:hover {
+  opacity: 0.8;
+}
+.main__copy {
+  line-height: 1.5;
+}
+.main__bird {
+  position: absolute;
+}
+.main__bird:last-of-type {
+  top: 26%;
+  right: 0;
+}
+@media screen and (width >= 1024px) {
+  .main__bird:last-of-type {
+    top: 35%;
+  }
+}
+.main__bird:first-of-type {
+  bottom: -20px;
+  transform: translateY(100%);
+}
+.main__image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: hsl(210, 24%, 25%);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(210, 24%, 15%);
+  border-radius: 2rem;
+  width: 0.6rem;
+}
+
+#menu {
+  display: none;
+}
+#menu:checked + .main-nav {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.main-nav {
+  position: fixed;
+  inset: 0;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  transition: all 0.5s ease;
+  opacity: 0;
+  z-index: 20;
+  pointer-events: none;
+}
+@media screen and (width >= 1024px) {
+  .main-nav {
+    -webkit-backdrop-filter: initial;
+            backdrop-filter: initial;
+    padding: 0;
+    flex-direction: row;
+    gap: 1rem;
+    opacity: 1;
+    position: initial;
+    pointer-events: initial;
+    justify-content: space-between;
+  }
+}
+.main-nav__list {
+  display: grid;
+  gap: 0.5rem;
+  text-align: center;
+}
+@media screen and (width >= 1024px) {
+  .main-nav__list {
+    grid-template-columns: repeat(4, max-content);
+  }
+}
+.main-nav__link, .main-nav__btn {
+  padding: 0.8rem 1rem;
+  color: hsl(210, 24%, 15%);
+}
+.main-nav__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+@media screen and (width >= 1024px) {
+  .main-nav__actions {
+    flex-direction: row;
+  }
+}
+.main-nav__actions a:last-child {
+  border-radius: 10px;
+  border: 2px solid #18334e;
+  background-color: #cddded;
+}/*# sourceMappingURL=styles.css.map */

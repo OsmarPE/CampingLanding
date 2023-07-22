@@ -1,0 +1,15 @@
+
+body {
+    font-family: $ff-primary;
+    font-weight: 500;
+    background-color: $color-body;
+    color: $color-blue-300;
+    overflow-x: hidden;
+  }
+
+  /*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+    margin-inline: auto;
+    width: 90%;
+    max-width: 1200px;
+  }

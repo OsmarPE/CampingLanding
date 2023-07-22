@@ -1,0 +1,9 @@
+#menu{
+    display: none;
+    &:checked{
+        & + .main-nav{
+            opacity: 1;
+            pointer-events: initial;
+        }
+    }
+}

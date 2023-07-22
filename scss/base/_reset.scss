@@ -1,0 +1,25 @@
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    display: inline-block;
+    text-decoration: none;
+    color: $color-blue-200;
+  }
+  picture,img{
+    display: block;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  

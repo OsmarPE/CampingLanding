@@ -1,0 +1,89 @@
+
+.main{
+    position: relative;
+    padding: 3rem 0;
+    height: calc(100svh - 80px);
+    @include desktop{
+        height: max(800px,100vh);
+        padding: calc(80px +  3rem) 0;
+    }
+    @include desktop-lg{
+        height: max(980px,100vh);
+    }
+    &__body{
+        position: relative;
+        max-width: 440px;
+        @include desktop{
+            max-width: 500px;
+        }
+    }
+    &__subtitle{
+        color: $color-blue-100;
+        font-weight: 600;
+        letter-spacing: 3px;
+        font-size: clamp(.875rem,4.8vw,1rem);
+    
+    }
+
+    &__title{
+        font-family: $ff-secundary;
+        font-size: clamp(2.4rem,4.5vw,3.4rem); 
+        color: $color-blue-200; 
+        line-height: 1.24; 
+        margin: .5rem 0;
+    }
+    &__btn{
+        margin-top: 2rem;
+        padding: 1rem 1.5rem;
+        border-radius: 10px;
+        background-image: $gradient-color;
+        color: white;
+        font-weight: 400;
+        box-shadow: 0 24px 38px rgba($color: $color-blue-200, $alpha: 0.34);
+        transition: opacity 0.4s ease;
+        &:hover{
+            opacity: .8;
+        }
+    }
+    &__copy{
+        line-height: 1.5;
+    }
+    &__bird{
+        position: absolute;
+        &:last-of-type{
+            top: 26%;
+            right: 0;
+            @include desktop{
+                top: 35%;
+            }
+        }
+        &:first-of-type{
+            bottom: -20px;
+            transform: translateY(100%);
+        }
+    }
+    &__image{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        pointer-events: none;
+        
+    }
+
+
+}
+
+::-webkit-scrollbar{
+    width: .6rem;
+    background-color: hsl(210, 24%, 25%);
+    // border-radius: .5rem;
+    
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: hsl(210, 24%, 15%);
+    border-radius: 2rem;
+    width: .6rem;
+
+
+}

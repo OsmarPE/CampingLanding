@@ -1,0 +1,39 @@
+.header{
+    transition: box-shadow 0.4s ease;
+    &.active{
+        box-shadow: 0 17px 30px rgba($color: #18334e, $alpha: 0.14) ;
+    }
+
+    @include desktop{
+        position: fixed;
+        inset: 0 0 auto 0;
+        z-index: 3;
+        background-color: $color-body;
+    }
+    &__body{
+        height: 80px;
+        display: grid;
+        grid-template-columns: repeat(2,max-content);
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+        @include desktop{
+            grid-template-columns: max-content 1fr;  
+            gap: 2rem;  
+        }
+
+    }
+    &__menu{
+        @include desktop{
+            display: none;    
+        }
+        z-index: 21;
+        i{
+            font-size: 2rem;
+        }
+    }
+}
+
+
+
+

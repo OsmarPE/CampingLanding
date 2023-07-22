@@ -1,0 +1,53 @@
+
+.main-nav{
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(20px);
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    transition: all 0.5s ease;
+    opacity: 0;
+    z-index: 20;
+    pointer-events: none;
+    @include desktop{
+        backdrop-filter: initial;
+        padding: 0;
+        flex-direction: row;
+        gap: 1rem;
+        opacity: 1;
+        position: initial;
+        pointer-events: initial;
+        justify-content: space-between;   
+    }
+    &__list{
+        display: grid;
+        gap: .5rem;
+        text-align: center;
+        @include desktop{
+            grid-template-columns: repeat(4,max-content);   
+        }
+        
+    }
+    
+    &__link,&__btn{
+        padding: .8rem 1rem;
+        color: $color-blue-300;
+    }
+
+    &__actions{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .5rem;
+        @include desktop{
+            flex-direction: row;   
+        }
+        a:last-child{
+            border-radius: 10px;
+            border: 2px solid $color-blue-200;
+            background-color: $color-white-200;
+        }
+    }
+}

@@ -14,7 +14,7 @@
 - Librery GSAP for animations and transitions
 
 ## Link
-- Netlify: https://app.netlify.com/sites/wonderful-cannoli-eeee21/overview
+- Netlify: https://wonderful-cannoli-eeee21.netlify.app/
 
 ## Preview
 ![image](https://github.com/OsmarPE/CampingLanding/assets/81031316/aed025a7-ceb7-4e88-8822-757b122daacd)
